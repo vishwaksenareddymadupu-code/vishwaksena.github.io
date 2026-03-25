@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vishwaksena Reddy Madupu | SAP SD & S/4HANA Consultant</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --blue:        #0057B8;
+      --blue-mid:    #0069D9;
+      --blue-light:  #EBF4FF;
+      --blue-xlight: #F4F9FF;
+      --navy:        #021D3E;
+      --green:       #059669;
+      --green-bg:    #ECFDF5;
+      --amber:       #B45309;
+      --amber-bg:    #FFFBEB;
+      --gray-100:    #F3F4F6;
+      --gray-200:    #E5E7EB;
+      --gray-400:    #9CA3AF;
+      --gray-600:    #4B5563;
+      --gray-800:    #1F2937;
+      --white:       #FFFFFF;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md:   0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --shadow-lg:   0 12px 40px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.06);
+      --radius:      16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      background: #F0F4FA;
+      color: var(--gray-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══════════════════════════ HERO ═══════════════════════════ */
+    .hero {
+      position: relative;
+      background: var(--navy);
+      overflow: hidden;
+      padding: 0;
+    }
+    .hero-gradient {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% -10%, rgba(0,105,217,.55) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 10% 110%, rgba(0,87,184,.40) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 50% at 90% 80%, rgba(5,150,105,.15) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 56px 36px 52px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* Photo */
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero-photo-ring {
+      width: 136px; height: 136px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(0,105,217,.9), rgba(5,150,105,.7));
+      box-shadow: 0 0 0 6px rgba(255,255,255,.06), var(--shadow-lg);
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: #1e3a5f;
+    }
+    .hero-photo-initials {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a4580 0%, #0057B8 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; font-weight: 800; color: rgba(255,255,255,.85);
+      letter-spacing: -1px;
+    }
+    .hero-status-dot {
+      position: absolute;
+      bottom: 8px; right: 8px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 0 2px var(--green);
+    }
+
+    /* Text side */
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero-eyebrow span { color: var(--green); }
+    .hero-name {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+    .hero-title {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,255,255,.65);
+      margin-bottom: 22px;
+    }
+    .hero-title strong { color: rgba(255,255,255,.9); font-weight: 600; }
+
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 28px;
+    }
+    .hero-tag {
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.82);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: background .2s;
+    }
+    .hero-tag:hover { background: rgba(255,255,255,.15); }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-mid);
+      color: #fff;
+      border: none; border-radius: 10px;
+      padding: 11px 22px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 14px rgba(0,87,184,.4);
+    }
+    .btn-primary:hover { background: #0051a8; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,87,184,.5); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      border-radius: 10px;
+      padding: 11px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.14); }
+
+    /* Contacts strip */
+    .hero-contacts-strip {
+      background: rgba(255,255,255,.05);
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .hero-contacts-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 28px;
+    }
+    .hc {
+      display: inline-flex; align-items: center; gap: 7px;
+      color: rgba(255,255,255,.6);
+      font-size: 0.82rem;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color .2s;
+    }
+    .hc:hover { color: rgba(255,255,255,.95); }
+    .hc svg { flex-shrink: 0; opacity: .7; }
+
+    /* ═══════════════════════════ LAYOUT ═══════════════════════════ */
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 28px 60px;
+      display: grid;
+      grid-template-columns: 288px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ═══════════════════════════ CARDS ═══════════════════════════ */
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .2s;
+    }
+    .card:hover { box-shadow: var(--shadow-md); }
+
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+    .section-label::before {
+      content: '';
+      width: 3px; height: 14px;
+      background: var(--blue);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: var(--gray-200);
+    }
+
+    /* ═══════════════════════════ SIDEBAR ═══════════════════════════ */
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    /* Stats */
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .stat-box {
+      background: var(--blue-xlight);
+      border: 1px solid #D6E9FF;
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-desc {
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 16px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      margin-bottom: 8px;
+    }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      padding: 4px 10px;
+      border-radius: 7px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .pill-navy { background: var(--navy); color: #fff; }
+    .pill-blue { background: var(--blue-light); color: var(--blue); }
+    .pill-mid { background: #E8F0FF; color: #1D4ED8; }
+    .pill-gray { background: var(--gray-100); color: var(--gray-600); }
+
+    /* Expertise list */
+    .exp-list { display: flex; flex-direction: column; gap: 9px; }
+    .exp-item {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.45;
+    }
+    .exp-icon {
+      width: 20px; height: 20px; border-radius: 6px;
+      background: var(--blue-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .exp-icon svg { color: var(--blue); }
+
+    /* Education */
+    .edu-degree { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .edu-school { font-size: 0.82rem; color: var(--gray-600); }
+
+    /* ═══════════════════════════ MAIN ═══════════════════════════ */
+    .main { display: flex; flex-direction: column; gap: 24px; }
+
+    /* Summary */
+    .summary-body {
+      font-size: 0.94rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .summary-chips {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--blue-light);
+      border: 1px solid #C7DEFF;
+      color: var(--blue);
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; }
+
+    .tl-row {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 18px;
+      padding-bottom: 28px;
+    }
+    .tl-row:last-child { padding-bottom: 0; }
+
+    .tl-spine {
+      display: flex; flex-direction: column; align-items: center;
+      padding-top: 5px;
+    }
+    .tl-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 2.5px solid var(--white);
+      box-shadow: 0 0 0 2.5px var(--blue);
+      flex-shrink: 0;
+    }
+    .tl-dot.now { background: var(--green); box-shadow: 0 0 0 2.5px var(--green); }
+    .tl-stem {
+      flex: 1;
+      width: 2px;
+      border-radius: 2px;
+      margin-top: 5px;
+      background: linear-gradient(to bottom, var(--blue) 0%, var(--gray-200) 100%);
+    }
+    .tl-row:last-child .tl-stem { display: none; }
+
+    .tl-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 14px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .tl-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+    .tl-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 12px; margin-bottom: 3px;
+    }
+    .tl-role { font-size: 1rem; font-weight: 700; color: var(--gray-800); }
+    .tl-badge {
+      flex-shrink: 0;
+      font-size: 0.7rem; font-weight: 700;
+      border-radius: 20px;
+      padding: 3px 11px;
+    }
+    .tl-badge-green { background: var(--green-bg); color: var(--green); border: 1px solid #A7F3D0; }
+    .tl-badge-blue  { background: var(--blue-light); color: var(--blue); border: 1px solid #BFDBFE; }
+
+    .tl-org { font-size: 0.87rem; font-weight: 600; color: var(--blue); margin-bottom: 3px; }
+    .tl-meta {
+      font-size: 0.76rem; color: var(--gray-400); margin-bottom: 13px;
+      display: flex; flex-wrap: wrap; gap: 4px 14px;
+    }
+    .tl-meta span { display: inline-flex; align-items: center; gap: 4px; }
+
+    .tl-project {
+      display: inline-block;
+      background: var(--amber-bg);
+      color: var(--amber);
+      border: 1px solid #FDE68A;
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .tl-bullets li {
+      padding-left: 18px;
+      position: relative;
+      font-size: 0.87rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+    .tl-bullets li::before {
+      content: '';
+      position: absolute; left: 2px; top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      opacity: .5;
+    }
+
+    /* ═══════════════════════════ FOOTER ═══════════════════════════ */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.45);
+      text-align: center;
+      padding: 24px 28px;
+      font-size: 0.78rem;
+    }
+    footer a { color: rgba(255,255,255,.55); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* ═══════════════════════════ RESPONSIVE ═══════════════════════ */
+    @media (max-width: 740px) {
+      .hero-inner { flex-direction: column; text-align: center; align-items: center; gap: 24px; }
+      .hero-tags, .hero-actions { justify-content: center; }
+      .hero-contacts-inner { justify-content: center; }
+      .page { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<header class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-inner">
+    <!-- Photo -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring">
+        <!-- PHOTO: Save your headshot as "photo.jpg" in the same folder to display it here -->
+        <!-- <img class="hero-photo" src="photo.jpg" alt="Vishwaksena Reddy Madupu"> -->
+        <div class="hero-photo-initials">VR</div>
+      </div>
+      <div class="hero-status-dot" title="Open to opportunities"></div>
+    </div>
+
+    <!-- Text -->
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span>●</span> Available for New Opportunities</div>
+      <h1 class="hero-name">Vishwaksena Reddy Madupu</h1>
+      <p class="hero-title"><strong>SAP SD & S/4HANA Functional Consultant</strong> &nbsp;·&nbsp; 7+ Years Enterprise Experience</p>
+
+      <div class="hero-tags">
+        <span class="hero-tag">Order-to-Cash</span>
+        <span class="hero-tag">S/4HANA 2022</span>
+        <span class="hero-tag">3PL Pharma</span>
+        <span class="hero-tag">BRF+</span>
+        <span class="hero-tag">EDI / IDoc</span>
+        <span class="hero-tag">SAP Fiori</span>
+        <span class="hero-tag">Data Migration</span>
+        <span class="hero-tag">SD-FI Integration</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-ghost" href="https://www.linkedin.com/in/vishwaksena" target="_blank">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contacts strip -->
+  <div class="hero-contacts-strip">
+    <div class="hero-contacts-inner">
+      <a class="hc" href="tel:9373139145">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 014.09 12a19.8 19.8 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        937-313-9145
+      </a>
+      <a class="hc" href="mailto:Vishwak.tech.madupu@gmail.com">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Vishwak.tech.madupu@gmail.com
+      </a>
+      <a class="hc" href="mailto:vishwaksenareddymadupu@gmail.com">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        vishwaksenareddymadupu@gmail.com
+      </a>
+      <a class="hc" href="https://www.linkedin.com/in/vishwaksena" target="_blank">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        linkedin.com/in/vishwaksena
+      </a>
+      <span class="hc">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Columbus, OH
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════ PAGE BODY ════════════════════════════ -->
+<div class="page">
+
+  <!-- ─────────── SIDEBAR ─────────── -->
+  <aside class="sidebar">
+
+    <!-- At a Glance -->
+    <div class="card">
+      <div class="section-label">At a Glance</div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-val">7+</div>
+          <div class="stat-desc">Years SAP Experience</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">3</div>
+          <div class="stat-desc">Full-Cycle Implementations</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">250+</div>
+          <div class="stat-desc">Pharma Clients Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">3</div>
+          <div class="stat-desc">Industries Covered</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="card">
+      <div class="section-label">Technical Skills</div>
+      <div class="skill-group">
+        <div class="skill-group-title">Core Modules</div>
+        <div class="pills">
+          <span class="pill pill-navy">SAP SD</span>
+          <span class="pill pill-navy">S/4HANA</span>
+          <span class="pill pill-blue">ECC</span>
+          <span class="pill pill-blue">Order-to-Cash</span>
+          <span class="pill pill-blue">Pricing</span>
+          <span class="pill pill-blue">Billing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Business Processes</div>
+        <div class="pills">
+          <span class="pill pill-mid">Intercompany</span>
+          <span class="pill pill-mid">3PL Logistics</span>
+          <span class="pill pill-mid">Consignment</span>
+          <span class="pill pill-mid">Drop Ship</span>
+          <span class="pill pill-mid">STO</span>
+          <span class="pill pill-mid">Contracts</span>
+          <span class="pill pill-mid">ATP</span>
+          <span class="pill pill-mid">Third-Party</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Configuration & Tools</div>
+        <div class="pills">
+          <span class="pill pill-blue">BRF+</span>
+          <span class="pill pill-blue">EDI / IDoc</span>
+          <span class="pill pill-blue">SAP Fiori</span>
+          <span class="pill pill-blue">Output Control</span>
+          <span class="pill pill-blue">CVI / BP</span>
+          <span class="pill pill-blue">SAP GTS</span>
+          <span class="pill pill-blue">RICEFW</span>
+          <span class="pill pill-blue">ABAP Debugging</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Integration</div>
+        <div class="pills">
+          <span class="pill pill-gray">SD-FI</span>
+          <span class="pill pill-gray">SD-MM</span>
+          <span class="pill pill-gray">Salesforce</span>
+          <span class="pill pill-gray">LSMW</span>
+          <span class="pill pill-gray">LTMC</span>
+          <span class="pill pill-gray">BODS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Methodologies</div>
+        <div class="pills">
+          <span class="pill pill-gray">SAP Activate</span>
+          <span class="pill pill-gray">ASAP</span>
+          <span class="pill pill-gray">JIRA</span>
+          <span class="pill pill-gray">ServiceNow</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Areas of Expertise -->
+    <div class="card">
+      <div class="section-label">Expertise</div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          End-to-end S/4HANA OTC implementation & migration
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          BRF+ dynamic rules for high-volume distribution
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          EDI 850/940 & address alias enhancements
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Pharmaceutical 3PL & variant pricing architectures
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Custom Fiori app delivery & end-user enablement
+        </div>
+        <div class="exp-item">
+          <div class="exp-icon">
+            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Cross-functional collaboration: FI, MM, GTS, Integration
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="card">
+      <div class="section-label">Education</div>
+      <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+      <div class="edu-school">Koneru Lakshmaiah University, India</div>
+    </div>
+
+  </aside>
+
+  <!-- ─────────── MAIN ─────────── -->
+  <main class="main">
+
+    <!-- Summary -->
+    <div class="card">
+      <div class="section-label">Professional Summary</div>
+      <p class="summary-body">
+        Results-driven SAP SD Functional Consultant with <strong>7+ years</strong> of enterprise and consulting experience across SAP ECC and S/4HANA, delivering scalable <strong>Order-to-Cash</strong> solutions spanning pricing, billing, logistics execution, and complex 3PL pharmaceutical distribution. Currently architecting OTC operations for <strong>250+ pharmaceutical manufacturer clients</strong> at Cardinal Health, with advanced BRF+ expertise, EDI integrations, and custom Fiori application delivery. Proven delivery across multiple full-cycle SAP implementations for global clients in Pharmaceuticals, Healthcare, and Consumer Goods.
+      </p>
+      <div class="summary-chips">
+        <div class="chip">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Full-Cycle Implementations
+        </div>
+        <div class="chip">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Pharma &amp; Healthcare Supply Chain
+        </div>
+        <div class="chip">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Global Distribution &amp; Billing
+        </div>
+        <div class="chip">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          SD-FI / MM / GTS Integration
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="card">
+      <div class="section-label">Professional Experience</div>
+      <div class="timeline">
+
+        <!-- Cardinal Health -->
+        <div class="tl-row">
+          <div class="tl-spine">
+            <div class="tl-dot now"></div>
+            <div class="tl-stem"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div class="tl-role">SAP SD Functional Consultant</div>
+              <span class="tl-badge tl-badge-green">Current Role</span>
+            </div>
+            <div class="tl-org">Cardinal Health &nbsp;·&nbsp; Columbus, OH</div>
+            <div class="tl-meta">
+              <span>📅 Dec 2023 – Present</span>
+              <span>⚙️ S/4HANA 2022</span>
+              <span>🏥 Pharmaceuticals</span>
+            </div>
+            <div class="tl-project">3PL OTC Migration · Legacy → S/4HANA · 250+ Clients</div>
+            <ul class="tl-bullets">
+              <li>Led full life-cycle migration of 3PL Order-to-Cash processes to S/4HANA, supporting <strong>250+ pharmaceutical manufacturer clients</strong> across Traditional (client-owned inventory) and Title (Cardinal-owned inventory) business models.</li>
+              <li>Architected <strong>250+ company codes</strong> — one per manufacturer client — with a runtime enhancement to flip company codes in sales orders using the Customer Industry key.</li>
+              <li>Configured end-to-end special business processes: Dropship, Individual Purchase Order (IPO), and Intercompany Billing for Traditional-to-Title stock movement.</li>
+              <li>Designed <strong>BRF+ rules</strong> for user status assignment based on PO type and plant determination driven by customer region.</li>
+              <li>Built <strong>EDI 850/940 interfaces</strong> and EDPAR setup for ShipTos assigned to multiple SoldTos; developed complex address-alias enhancement comparing IDoc address to customer master before order creation.</li>
+              <li>Integrated PharmaRx e-commerce channel (Order Submit, Order Details, Order History).</li>
+              <li>Configured <strong>variant pricing</strong> for special charges; developed enhancement to auto-add client billing fees to monthly 3PL service orders.</li>
+              <li>Delivered <strong>custom Fiori apps</strong> for mass sales order upload and mass credit/rebill processing with end-user training.</li>
+              <li>Maintained SAP GTS customer licenses and CSOM thresholds for compliance-relevant order processing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- British American Tobacco -->
+        <div class="tl-row">
+          <div class="tl-spine">
+            <div class="tl-dot"></div>
+            <div class="tl-stem"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div class="tl-role">SAP SD Consultant</div>
+              <span class="tl-badge tl-badge-blue">2.5 Years</span>
+            </div>
+            <div class="tl-org">British American Tobacco &nbsp;·&nbsp; via IBM &nbsp;·&nbsp; India</div>
+            <div class="tl-meta">
+              <span>📅 Jun 2021 – Nov 2023</span>
+              <span>⚙️ S/4HANA 2020</span>
+              <span>🌍 Global Distribution</span>
+            </div>
+            <div class="tl-project">Large-Scale S/4HANA Implementation · Global Distribution & Billing</div>
+            <ul class="tl-bullets">
+              <li>Part of a six-member SD team delivering a large-scale S/4HANA implementation covering global distribution and billing processes.</li>
+              <li>Configured end-to-end OTC: inquiry, quotation, sales order, delivery, billing, returns, and credit/debit memos.</li>
+              <li>Designed pricing procedures including base price, discounts, surcharges, cross-selling conditions, and unit-based pricing.</li>
+              <li>Configured enterprise structure (sales organizations, distribution channels, divisions) and sales areas, offices, and groups.</li>
+              <li>Implemented shipping & logistics: shipping points, route determination, loading groups, picking, packing, PGI, and transportation planning.</li>
+              <li>Configured intercompany billing and STO scenarios ensuring correct stock movement and financial postings.</li>
+              <li>Configured billing document types, invoice lists, and SD-FI account determination for accurate revenue recognition.</li>
+              <li>Conducted end-user training and provided post-go-live hypercare and production support.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bayer -->
+        <div class="tl-row">
+          <div class="tl-spine">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div class="tl-role">SAP SD Functional Consultant</div>
+              <span class="tl-badge tl-badge-blue">2.5 Years</span>
+            </div>
+            <div class="tl-org">Bayer &nbsp;·&nbsp; India</div>
+            <div class="tl-meta">
+              <span>📅 Jan 2019 – Jun 2021</span>
+              <span>⚙️ ECC → S/4HANA</span>
+              <span>🏥 Healthcare</span>
+            </div>
+            <div class="tl-project">ECC to S/4HANA Brownfield Migration · OTC</div>
+            <ul class="tl-bullets">
+              <li>Supported Bayer's ECC-to-S/4HANA brownfield migration across configuration, testing, and go-live phases.</li>
+              <li>Validated customer master data during migration, supporting data quality checks and issue reporting.</li>
+              <li>Assisted with master data migration using LTMC for customers, materials, and pricing conditions.</li>
+              <li>Monitored inbound and outbound IDocs, logging and escalating errors to support stable EDI data flow.</li>
+              <li>Provided SD production support: break-fix, SR resolution by severity, and KT documentation preparation.</li>
+              <li>Assisted in preparing functional specifications for custom development requirements.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer>
+  <p>
+    Vishwaksena Reddy Madupu &nbsp;·&nbsp; SAP SD & S/4HANA Consultant &nbsp;·&nbsp; Columbus, OH
+    &nbsp;·&nbsp;
+    <a href="mailto:vishwaksenareddymadupu@gmail.com">vishwaksenareddymadupu@gmail.com</a>
+    &nbsp;·&nbsp; Updated March 2026
+  </p>
+</footer>
+
+</body>
+</html>
